@@ -1,6 +1,8 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from db import Base
+from sqlalchemy.orm import declarative_base
+
+Base = declarative_base()
 
 def init_db():
     URL_DB = "sqlite:///database.db"
@@ -8,4 +10,6 @@ def init_db():
     Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
-    session = Session()
+    return Session()
+
+session = None # Hanya dipakai ketika di inisialisasi session=init_db()

@@ -1,7 +1,6 @@
 from sqlalchemy import Column, String, Text, Integer
-from sqlalchemy.orm import declarative_base
+from init_db import Base
 
-Base = declarative_base()
 
 class CVData(Base):
     __tablename__= 'cv_data'
@@ -11,4 +10,6 @@ class CVData(Base):
     email = Column(String(100), nullable=False)
     telepon = Column(String(15), nullable=False)
     pengalaman = Column(Text, nullable=True)
+    pendidikan_terakhir = Column(Text, nullable=True)
     pendidikan = Column(Text, nullable=True)
+    skill = Column(Text, nullable=True)
