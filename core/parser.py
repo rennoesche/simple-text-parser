@@ -3,7 +3,6 @@ import re
 
 
 def parser(sentences):
-
     def extract_name(sentences):
         re_name = r"(?P<name>\b[A-Z][a-z]+\b(?:\s[A-Z][a-z]+)+)"
         for sentence in sentences:
