@@ -29,9 +29,9 @@ def parser(sentences):
     
     def extract_sekul(sentences):
         re_kampus = [
-            r"Sekolah(?:\s[A-Z][a-z]+)+",
-            r"Politeknik(?:\s[A-Z][a-z]+)",
-            r"Universitas(?:\s[A-Z][a-z]+)"
+            r"Sekolah(?:\s[A-Z][a-z]+)+(\n)",
+            r"Politeknik(?:\s[A-Z][a-z]+(\n))",
+            r"Universitas(?:\s[A-Z][a-z]+(\n))"
         ]
         for re_ in re_kampus:
             for sentence in sentences:
